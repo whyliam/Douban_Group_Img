@@ -85,7 +85,7 @@ def main():
             print '\n-----download "' + group_title + '"ing-----'
             times += 1
         items = re.findall(
-            '<ahref="\/group\/topic\/(\d+)\/\?session=\w+">([^<]+)<\/a><span>\((\d+)\)\|', group_content)
+            '<ahref="\/group\/topic\/(\d+)\/">([^<]+)<\/a><span>\((\d+)\)\|', group_content)
 
         if not items.__len__() == 0:
             # print items
