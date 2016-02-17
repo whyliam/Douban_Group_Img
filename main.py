@@ -102,7 +102,6 @@ def main(user_name,user_password):
                     if not imgs.__len__() == 0:
                         num = 0
                         for img_url in imgs:
-                            print img_url
                             num = num + 1
                             filename = str(item_title) + str(num) + '.jpg'
                             try:
