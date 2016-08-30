@@ -50,7 +50,7 @@ def downImg(url, name):
     fw.close()
 
 
-def main(user_name,user_password):
+def main(user_name, user_password):
     du = 'http://m.douban.com'
 
     # set Group ID
@@ -70,18 +70,19 @@ def main(user_name,user_password):
         print 'FATAL'
         exit(0)
     times = 0
-    
+
     for page in range(1, all_pages):
         # Get Groups
         group_content = browse(
-            du + '/group/' + group_id + '/topics?start=' + str(page*25), cj)
+            du + '/group/' + group_id + '/topics?start=' + str(page * 25), cj)
         print page
         replace_dict = {'\n': '', '\t': '', ' ': '', '　': ''}
         group_content = replace_all(group_content, replace_dict)
         if debug >= 1:
             print group_content
         if times == 0:
-            group_title = re.findall('<h1class="group-name">(.*)<\/h1>', group_content)[0]
+            group_title = re.findall(
+                '<h1class="group-name">(.*)<\/h1>', group_content)[0]
             print '\n-----download "' + group_title + '"ing-----'
             times += 1
         items = re.findall(
@@ -98,7 +99,7 @@ def main(user_name,user_password):
                     item_content = browse(item_url, cj)
                     img_content = replace_all(item_content, replace_dict)
                     imgs = re.findall(
-                        '<imgid=.*?src=\'([^<]*)\'/>', img_content)
+                        '<divclass="content_img"><imgsrc="(.*?)"/>', img_content)
                     if not imgs.__len__() == 0:
                         num = 0
                         for img_url in imgs:
@@ -121,4 +122,4 @@ if __name__ == '__main__':
     debug = 0
     user_name = raw_input('豆瓣 用户名\n')
     user_password = raw_input('\n豆瓣 密码\n')
-    main(user_name,user_password)
+    main(user_name, user_password)

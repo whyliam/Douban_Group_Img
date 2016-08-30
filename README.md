@@ -7,7 +7,8 @@ In the group, everyone can upload any beautiful pictures, like self-timer. So I 
 
 A picture downloaded from group
 
-![image](http://naalnblog-wordpress.stor.sinaapp.com/uploads/2014/07/p16081849.jpg)
+![image](http://ww2.sinaimg.cn/large/006tNc79gw1f510shx6l3j30dw0ijmy9)
+
 
 
 ``` 
